@@ -1,0 +1,27 @@
+<div class="container margin-header-bis text-center">
+  <h3>Browse a movie 🎬</h3>
+  <form class="margin-header" action="/search" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="text" class="form-control" name="movie_name" placeholder="Browse..">
+    <button type="submit" class="btn btn-width btn-hover">Search</button>
+  </form>
+</div>
+
+<div class="container margin-header-bis text-center">
+  <% if @movies == {} %>
+    <h4 class="text-center margin-header">No movies found..</h4>
+  <% elsif @movies %>
+    <div class="row">
+      <% @movies.each do |id, movie| %>
+        <div class="card col-lg-3">
+          <div class="card-body">
+            <h5 class="card-title"><strong><%= movie[:name] %></strong></h5>
+            <p class="card-text"><strong>Directed by </strong><%= movie[:director] %></p>
+            <p class="card-subtitle mb-2 text-muted"><strong>Release: </strong><%= movie[:release_date] %></p>
+            <img src="https://image.tmdb.org/t/p/w200<%= movie[:poster_path] %>" alt="Movie poster: <%= movie[:name] %>">
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <%end%>
+</div>
