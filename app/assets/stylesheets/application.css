@@ -13,9 +13,9 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: #E0EAFC;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+  background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+  background-blend-mode: multiply;
   min-height: 100vh;
   position: relative;
   margin: 0;
@@ -23,9 +23,7 @@ body {
 }
 
 .my-own {
-  background: #41295a;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2F0743, #41295a);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2F0743, #41295a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #000;  /* fallback for old browsers */
 }
 
 footer {
@@ -34,9 +32,7 @@ footer {
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background: #41295a;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2F0743, #41295a);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2F0743, #41295a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #000;  /* fallback for old browsers */
   text-align: center;
   color: #fff;
 }
@@ -55,7 +51,7 @@ footer {
 
 input[type=text], select, textarea {
   width: 100%; /* Full width */
-  opacity: 0.6;
+  opacity: 0.9;
   padding: 12px; /* Some padding */  
   border: 1px solid #ccc; /* Gray border */
   border-radius: 4px; /* Rounded borders */
@@ -67,7 +63,7 @@ input[type=text], select, textarea {
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
-  background: #41295a;;
+  background: darkred;
   color: white;
   padding: 12px 20px;
   border: 1px solid transparent;
@@ -80,7 +76,7 @@ input[type=submit]:hover {
   background-color: #fff;
   opacity: 0.6;
   color: #000;
-  border: 1px solid #000;
+  border: 1px solid transparent;
 }
 
 /* Add a background color and some padding around the form */
@@ -111,19 +107,21 @@ blockquote p::after {
 }
 
 .navbar-brand {
-  font-family: 'Mali', cursive;
+  font-family: 'Oswald', sans-serif;
   font-size: 25px;
+  color: red!important;
 }
 
 .btn-hover {
-  background: #41295a;
+  background: darkred;
   color: #fff;
+  border: 1px solid darkred;
 }
 
 .btn-hover:hover {
-  background: #614085;
+  background: rgb(160, 8, 8);
   color: #fff;
-  border: 1px solid #41295a;
+  border: 1px solid darkred;
 }
 
 .btn-logout {
@@ -137,4 +135,13 @@ blockquote p::after {
 
 .btn-width {
   width: 200px;
+}
+
+.centered-and-cropped { 
+  object-fit: cover
+}
+
+img:hover {
+  opacity: 0.5;
+  transition: .5s ease;
 }

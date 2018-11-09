@@ -7,19 +7,22 @@
   </form>
 </div>
 
-<div class="container margin-header-bis text-center">
+<div class="container margin-header text-center" style="box-sizing: content-box;">
   <% if @movies == {} %>
     <h4 class="text-center margin-header">No movies found..</h4>
   <% elsif @movies %>
-    <div class="row">
+    <div class="row text-center">
       <% @movies.each do |id, movie| %>
-        <div class="card col-lg-3">
-          <div class="card-body">
+        <div class="card" style="width: 18rem; border: none; margin: 1px; background: #000; color: #000;">
+          <img class="centered-and-cropped" width="288" height="400"
+          src="https://image.tmdb.org/t/p/w200<%= movie[:poster_path] %>" alt="Poster of <%= movie[:name] %>">
+          <div class="card-body" style="margin-bottom: 1px; background: #fff;">
             <h5 class="card-title"><strong><%= movie[:name] %></strong></h5>
             <p class="card-text"><strong>Directed by </strong><%= movie[:director] %></p>
-            <p class="card-subtitle mb-2 text-muted"><strong>Release: </strong><%= movie[:release_date] %></p>
-            <img src="https://image.tmdb.org/t/p/w200<%= movie[:poster_path] %>" alt="Movie poster: <%= movie[:name] %>">
           </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" style="border: none!important;"><strong>Release: </strong><%= movie[:release_date] %></li>
+          </ul>
         </div>
       <% end %>
     </div>
